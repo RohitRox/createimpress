@@ -1,0 +1,22 @@
+<h1>Listing impresses</h1>
+Create
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @impresses.each do |impress| %>
+  <tr>
+    <td><%= link_to 'Show', impress %></td>
+    <td><%= link_to 'Edit', edit_impress_path(impress) %></td>
+    <td><%= link_to 'Destroy', impress, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Impress', new_impress_path %>
+
