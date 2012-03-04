@@ -57,4 +57,9 @@ Createimpress::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.logger = Logger.new(STDOUT)
+  config.logger.level = Logger::INFO # use logger.level, not log_level
+
 end
+
