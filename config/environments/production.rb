@@ -61,5 +61,9 @@ Createimpress::Application.configure do
   config.logger = Logger.new(STDOUT)
   config.logger.level = Logger::INFO # use logger.level, not log_level
 
+  STDOUT.sync = true
+
+  Rails.logger = Rails.application.config.logger = logger
+
 end
 
