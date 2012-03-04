@@ -27,4 +27,7 @@ Createimpress::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.logger = Logger.new(STDOUT) # required for logging to work in rake tasks
+config.logger.level = Logger::INFO # required to stop debug logging on production
 end
+
