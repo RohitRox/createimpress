@@ -1,5 +1,6 @@
 Createimpress::Application.routes.draw do
-  resources :impresses
+  resources :pack
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -51,7 +52,7 @@ Createimpress::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
 
-  root :to => 'impresses#index'
+  root :to => 'pack#index'
 
   # See how all your routes lay out with "rake routes"
 

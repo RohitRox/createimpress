@@ -1,6 +1,12 @@
 class ImpressesController < ApplicationController
   # GET /impresses
   # GET /impresses.json
+
+  def create_impress
+    @pack = params[:pack]
+
+  end
+
   def index
     @impresses = Impress.all
 
@@ -81,3 +87,4 @@ class ImpressesController < ApplicationController
     end
   end
 end
+

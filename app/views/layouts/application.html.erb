@@ -3,12 +3,27 @@
 <head>
   <title>Createimpress</title>
   <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "/css/jquery.wysiwyg.css" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery.wysiwyg.min" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+        <ul class="nav">
+        <li><a href="#" >Home</a></li>
+        <li class="divider-vertical"></li>
+        <li><a href="#" >View Recent Impresses</a></li>
+        </ul>
+    </div>
+  </div>
+</div>
+
 
 <%= yield %>
 
 </body>
 </html>
+

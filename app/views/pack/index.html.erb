@@ -1,11 +1,13 @@
 <div class="container-fluid">
   <div class="row-fluid">
-    <div class="span2">
+    <div class="span2" id="side_nav">
 
-       <ul>
-        <li><a href="#" id="new_impress" >New Slide</a></li>
-        <li><a href="#" data-remote="true" id="save_and_download">Save And Download</a></li>
-        </ul>
+        <a href="#" id="new_impress" class="btn btn-primary" >New Slide</a></li>
+        <a href="#" data-remote="true" id="save_and_download" class="btn btn-inverse">Save And Download</a>
+        <%= form_for "/pack",:html=>{:id=>"pack_form"} do |f| %>
+        <input type="hidden" name="pack"  id="pack" />
+        <input type="submit" value="continue" class="btn btn-success"/>
+        <% end %>
 
     </div>
     <div class="span10"  id="main">
