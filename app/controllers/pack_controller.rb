@@ -3,7 +3,7 @@ class PackController < ApplicationController
   layout :resolve_layout
 
   def index
-    
+
   end
 
   def create

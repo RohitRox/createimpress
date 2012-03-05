@@ -3,7 +3,6 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.3'
 
 gem 'foreman'
-gem 'heroku'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
@@ -20,8 +19,10 @@ gem 'jquery-rails'
 group :production do
   gem 'pg'
   gem 'thin'
+  gem 'heroku'
 end
 
 group :test do
   gem 'turn', '~> 0.8.3', :require => false
 end
+

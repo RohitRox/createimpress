@@ -14,16 +14,17 @@ $('#new_impress').click(function(){
 	slide_count+=1;
 	e.addClass(eClass);
 	$('#impress_buffer').append(e);
-	$('.'+eClass).de77_wysiwyg();
-	$('.'+eClass).parent('div').append('<div class="delete-slide btn btn-danger" onclick="javascript: die_slide(this)">Delete This Slide</div><span class="count-info">Slide#'+slide_count+'</span>');
+	$('.'+eClass).attr('id','slide'+slide_count).parent('div').append('<div class="delete-slide btn btn-danger" onclick="javascript: die_slide(this)">Delete This Slide</div><span class="count-info">Slide#'+slide_count+'</span>');
 	$('.'+eClass).parent('div').append(g_option());
-	scrollTo('.'+eClass,500)
+	scrollTo('.'+eClass,500);
+
+	area = new nicEditor({fullPanel : true}).panelInstance('slide'+slide_count,{hasPanel : true});
 });
 
 
 
 $('#save_and_download').click(function(){
-	var slides = $('.de77_editor');
+	var slides = $('.nicEdit-main');
 	var pack_div = "";
 	var r_x,r_y,r_z,scale,rotate;
 	if(slides.length<1){ alert('No Slides Created'); return false; } else
@@ -61,11 +62,11 @@ $('#save_and_download').click(function(){
 });
 
 function g_option(){
-var opt='<label class="checkbox inline"><input type="checkbox" class="rotate"> Rotate</label><label class="checkbox inline"><input type="checkbox" class="scale"> Scale</label><label class="checkbox inline"><input type="checkbox" class="3d"> 3D </label>';
+var opt='<br /> &nbsp; <label class="checkbox inline"><input type="checkbox" class="rotate"> Rotate</label><label class="checkbox inline"><input type="checkbox" class="scale"> Scale</label><label class="checkbox inline"><input type="checkbox" class="3d"> 3D </label><hr />';
 return opt;
 }
 
-function scrollTo(o,s){ var d = $(o).offset().top; $("html:not(:animated),body:not(:animated)").animate({ scrollTop: d-100}, s); }
+function scrollTo(o,s){ var d = $(o).offset().top; $("html:not(:animated),body:not(:animated)").animate({ scrollTop: d-200}, s); }
 
 
 });

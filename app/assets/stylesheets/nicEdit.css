@@ -1,0 +1,8 @@
+.nicEdit-main{
+min-height: 200px;
+}
+a:focus,input:focus,a img{
+outline: none;
+border: none;
+}
+
