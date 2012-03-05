@@ -3,10 +3,7 @@ class PackController < ApplicationController
   layout :resolve_layout
 
   def index
-    render :text => "Fuck Im running"
-    # respond_to do |format|
-    #   format.html # index.html.erb
-    # end
+    
   end
 
   def create
