@@ -65,5 +65,12 @@ Createimpress::Application.configure do
 
   # Rails.logger = Rails.application.config.logger = logger
   
+  config.assets.precompile += %w(
+  application.css
+  manifest_impress.css
+  application.js
+  impress.js
+  )
+  
 end
 
