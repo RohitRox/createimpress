@@ -26,8 +26,11 @@ Createimpress::Application.configure do
   config.assets.compress = false
 
   # Expands the lines which load the assets
-  config.assets.debug = true
-  config.logger = Logger.new(STDOUT) # required for logging to work in rake tasks
-config.logger.level = Logger::INFO # required to stop debug logging on production
+  config.assets.precompile += %w(
+  application.css
+  manifest_impress.css
+  application.js
+  impress.js
+  )
 end
 
