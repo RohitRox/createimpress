@@ -1,0 +1,25 @@
+.de77_toolbar
+{
+	border-bottom: 1px solid black;
+	background-color: #F0F0F0;
+	width: 540px;
+	padding: 5px;
+}
+.de77_toolbar *
+{
+	vertical-align: middle;
+}
+.de77_editor
+{
+	padding: 20px 10px;
+	min-height: 200px;
+	border: 6px solid #CCC;
+}
+.de77_wysiwyg
+{
+	border: 1px solid #999;
+	width: 550px;
+	margin: 10px 0px;
+	border-radius: 4px;
+}
+

@@ -7,5 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require base
+//= require jquery.wysiwyg
 //= require_tree .
+
 

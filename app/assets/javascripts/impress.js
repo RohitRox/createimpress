@@ -1,19 +1,9 @@
-/**
- * impress.js
- *
- * impress.js is a presentation tool based on the power of CSS3 transforms and transitions
- * in modern browsers and inspired by the idea behind prezi.com.
- *
- * MIT Licensed.
- *
- * Copyright 2011-2012 Bartek Szopka (@bartaz)
- *
- * ------------------------------------------------
- *  author:  Bartek Szopka
- *  version: 0.3
- *  url:     http://bartaz.github.com/impress.js/
- *  source:  http://github.com/bartaz/impress.js/
- */
+// impress.js
+// version: 0.3
+// url:     http://bartaz.github.com/impress.js/
+// source:  http://github.com/bartaz/impress.js/
+//= require_self
+
 
 (function ( document, window ) {
     'use strict';

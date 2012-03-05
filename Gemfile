@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 
-gem 'thin'
 gem 'foreman'
 gem 'heroku'
 
@@ -20,6 +19,7 @@ gem 'jquery-rails'
 
 group :production do
   gem 'pg'
+  gem 'thin'
 end
 
 group :test do
