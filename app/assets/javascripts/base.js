@@ -1,7 +1,8 @@
 var slide_count=0;
 function die_slide(obj){
-obj.parentNode.parentNode.removeChild(obj.parentNode);
-slide_count-=1;
+//obj.parentNode.parentNode.removeChild(obj.parentNode);
+//slide_count-=1;
+alert('this feature in not yet ready ! will be soon');
 }
 $(document).ready(
 function(){
@@ -20,7 +21,7 @@ $('#new_impress_slide').click(function(){
 	slide_count+=1;
 	e.addClass(eClass);
 	$('#impress_buffer').append(e);
-	$('.'+eClass).attr('id','slide'+slide_count).parent('div').append('<div class="delete-slide btn btn-danger" onclick="javascript: die_slide(this)">Delete This Slide</div><span class="count-info">Slide#'+slide_count+'</span>');
+	$('.'+eClass).attr('id','slide'+slide_count).parent('div').append('<div class="delete-slide btn btn-danger" onclick="javascript: die_slide(this)">Delete This Slide</div><span class="count-info">Slide#'+slide_count+'</span>').css('width','800');
 	$('.'+eClass).parent('div').append(g_option());
 	scrollTo('.'+eClass,500);
 
@@ -70,7 +71,7 @@ $('#save_and_download').click(function(){
 });
 
 function g_option(){
-var opt='<br /> &nbsp; <label class="checkbox inline"><input type="checkbox" class="rotate"> Rotate</label><label class="checkbox inline"><input type="checkbox" class="scale"> Scale</label><label class="checkbox inline"><input type="checkbox" class="3d"> 3D </label><hr />';
+var opt='&nbsp; <label class="checkbox inline"><input type="checkbox" class="rotate"> Rotate</label><label class="checkbox inline"><input type="checkbox" class="scale"> Scale</label><label class="checkbox inline"><input type="checkbox" class="3d"> 3D </label><hr />';
 return opt;
 }
 

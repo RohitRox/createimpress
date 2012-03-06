@@ -2,7 +2,7 @@
   <div class="row-fluid">
     <div class="span2" id="side_nav">
 
-        <a href="#" id="new_impress_slide" class="btn btn-primary" >New Slide</a></li>
+        <a href="#" id="new_impress_slide" class="btn btn-primary" >New Slide</a>
         <a href="#" data-remote="true" id="save_and_download" class="btn btn-inverse">Process</a>
         <%= form_for "/pack",:html=>{:id=>"pack_form_view"} do |f| %>
         <input type="hidden" name="pack"  id="pack" />
@@ -10,6 +10,7 @@
         <% end %>
         <%= form_for Impress.new do |f| %>
           <input type="hidden" name="pack"  id="pack_pack" />
+          <input type="text" placeholder="Enter Title of Your Presentation" name="title" />
           <label class="focused"><input type="radio" name="save_or_not" value="1" />Save And Download  </label>
           <label class="focused styled"><input type="radio" name="save_or_not" value="0" selected /> Just Get My File</label>
           <input type="submit" value="Continue" class="btn btn-success"/>
@@ -22,11 +23,14 @@
     <h1>Create Stunning Presentation in Minutes</h1>
     <ul>
     <li>No Configuration</li>
-    <li>Random Auto Genarated Styles</li>
+    <li>Random Auto Generated Styles</li>
     <li>Carry it , Show it Anywhere</li>
     <li>Powered by Impress.js, the next generation HTML5/CSS3 based presentation engine</li>
     </ul>
-
+    <br />
+    <%=link_to "LAUNCH A DEMO", "impresses/1",:class=>"btn btn-large",:target=>"_blank"%>
+    <br />
+    <br />
     <div id="impress_buffer">
     </div>
 

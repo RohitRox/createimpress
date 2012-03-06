@@ -5,7 +5,7 @@ margin-top: 60px;
 margin: 4px 2px;
 }
 #side_nav{
-width:152px;
+width:220px;
 position: fixed;
 }
 .btn{
@@ -20,5 +20,14 @@ padding: 4px;
 }
 label.styled{
 background: #eaeaea;
+}
+.slide_box{
+padding: 4px 10px;
+border-left: 1px solid #CCC;
+margin: 2px 0px;
+}
+.slide_box:hover{
+background: #E4EBF5;
+border-left: 1px solid #6E98BA;
 }
 

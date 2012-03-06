@@ -2,23 +2,16 @@
   <div class="row-fluid">
     <div class="span2">
 
-       <ul>
-        <li><a href="#" id="new_impress" >New Slide</a></li>
-        <li><a href="#" data-remote="true" id="save_and_download">Save And Download</a></li>
-        </ul>
-
     </div>
     <div class="span10"  id="main">
 
-    <h1>Create Stunning Presentation in Minutes</h1>
-    <ul>
-    <li>No Configuration</li>
-    <li>Random Auto Genarated Styles</li>
-    <li>Carry it , Show it Anywhere</li>
-    <li>Powered by Impress.js, the next generation HTML5/CSS3 based presentation engine</li>
-    </ul>
-
     <div id="impress_buffer">
+    <% @impresses.each do |i| %>
+    <div class="slide_box">
+    <h1><%=link_to "#{i.title}",impress_path(i) %></h1>
+    <h4>Created <%=time_ago_in_words(i.created_at) %> ago</h4>
+    </div>
+    <% end %>
     </div>
 
     </div>
