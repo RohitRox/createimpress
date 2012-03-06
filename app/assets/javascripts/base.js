@@ -57,6 +57,7 @@ $('#save_and_download').click(function(){
 	pack_div;
 
 	$('#pack').attr('value',pack_div);
+	$('#pack_pack').attr('value',pack_div);
 	$('#pack_form').fadeIn('slow');
 
 });

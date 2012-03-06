@@ -3,11 +3,18 @@
     <div class="span2" id="side_nav">
 
         <a href="#" id="new_impress" class="btn btn-primary" >New Slide</a></li>
-        <a href="#" data-remote="true" id="save_and_download" class="btn btn-inverse">Save And Download</a>
-        <%= form_for "/pack",:html=>{:id=>"pack_form"} do |f| %>
+        <a href="#" data-remote="true" id="save_and_download" class="btn btn-inverse">Process</a>
+        <%= form_for "/pack",:html=>{:class=>"pack_form"} do |f| %>
         <input type="hidden" name="pack"  id="pack" />
-        <input type="submit" value="continue" class="btn btn-success"/>
+        <input type="submit" value="Preview" class="btn btn-success"/>
         <% end %>
+        <%= form_for Impress.new do |f| %>
+          <input type="hidden" name="pack"  id="pack_pack" />
+          <input type="radio" name="save_or_not" value="1" />Yes <br/>
+          <input type="radio" name="save_or_not" value="0"/> No <br/>
+          <input type="submit" value="Download" class="btn btn-success"/>
+        <% end %>
+        
 
     </div>
     <div class="span10"  id="main">

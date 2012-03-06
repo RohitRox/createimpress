@@ -1,6 +1,7 @@
 Createimpress::Application.routes.draw do
   resources :pack
-
+  resources :impresses
+  match 'pack/download' => 'pack#pack_download'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

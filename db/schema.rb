@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120303165220) do
+ActiveRecord::Schema.define(:version => 20120306034010) do
+
+  create_table "boilerplates", :force => true do |t|
+    t.text     "head"
+    t.text     "base_file"
+    t.text     "foot"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "impresses", :force => true do |t|
     t.datetime "created_at"
