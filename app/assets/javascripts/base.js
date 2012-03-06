@@ -6,9 +6,15 @@ slide_count-=1;
 $(document).ready(
 function(){
 
-$('#pack_form').hide();
+$('#pack_form_view').hide();
+$('#new_impress').hide();
 
-$('#new_impress').click(function(){
+$('label.focused').click(function(){
+$(this).addClass('styled');
+$(this).siblings().removeClass('styled');
+});
+
+$('#new_impress_slide').click(function(){
 	var e = $(document.createElement('div'));
 	eClass = 'slide'+slide_count;
 	slide_count+=1;
@@ -58,7 +64,8 @@ $('#save_and_download').click(function(){
 
 	$('#pack').attr('value',pack_div);
 	$('#pack_pack').attr('value',pack_div);
-	$('#pack_form').fadeIn('slow');
+	$('#pack_form_view').fadeIn('slow');
+	$('#new_impress').fadeIn('slow');
 
 });
 

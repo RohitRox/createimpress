@@ -15,4 +15,10 @@ margin:4px;
 float: right;
 padding: 6px;
 }
+label.focused{
+padding: 4px;
+}
+label.styled{
+background: #eaeaea;
+}
 
