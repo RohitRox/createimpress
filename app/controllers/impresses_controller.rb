@@ -3,7 +3,7 @@ class ImpressesController < ApplicationController
   # GET /impresses.json
 
   def create_impress
- 
+
 
   end
 
@@ -46,22 +46,22 @@ class ImpressesController < ApplicationController
   # POST /impresses
   # POST /impresses.json
   def create
-      base_impress = IO.read(Rails.root + "db/fixtures/impress.js")
       require 'zip/zip'
       require 'zip/zipfilesystem'
 
-      t = Tempfile.new("bundle")
-      # Give the path of the temp file to the zip outputstream, it won't try to open it as an archive.
-      x = Zip::ZipOutputStream.open(t.path) 
-      x.put_next_entry("impress.js")
-      x.print IO.read("db/fixtures/impress.js")
+     file_name = "pack_impress.zip"
+      t = Tempfile.new("my-temp-filename-#{Time.now}")
+      Zip::ZipOutputStream.open(t.path) do |z|
 
-      # End of the block  automatically closes the file.
-      # Send it using the right mime type, with a download window and some nice file name.
-      send_file t.path, :type => 'application/zip', :disposition => 'attachment', :filename => "some-brilliant-file-name.zip"
-      # The temp file will be deleted some time...
+          z.put_next_entry('impress.js')
+          z.print IO.read(Rails.root + "db/fixtures/impress.js")
+
+      end
+      send_file t.path, :type => 'application/zip',
+                             :disposition => 'attachment',
+                             :filename => file_name
       t.close
-      #render :text=>base_impress.to_s
+
   end
 
   # PUT /impresses/1
