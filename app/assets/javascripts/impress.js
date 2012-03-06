@@ -4,7 +4,6 @@
 // source:  http://github.com/bartaz/impress.js/
 //= require_self
 
-
 (function ( document, window ) {
     'use strict';
 

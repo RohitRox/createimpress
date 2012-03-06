@@ -22,7 +22,7 @@ $('#new_impress_slide').click(function(){
 	e.addClass(eClass);
 	$('#impress_buffer').append(e);
 	$('.'+eClass).attr('id','slide'+slide_count).parent('div').append('<div class="delete-slide btn btn-danger" onclick="javascript: die_slide(this)">Delete This Slide</div><span class="count-info">Slide#'+slide_count+'</span>').css('width','800');
-	$('.'+eClass).parent('div').append(g_option());
+	$('.'+eClass).parent('div').append(g_option(slide_count));
 	scrollTo('.'+eClass,500);
 
 	area = new nicEditor({fullPanel : true}).panelInstance('slide'+slide_count,{hasPanel : true});
@@ -40,13 +40,13 @@ $('#save_and_download').click(function(){
 		if(index>0){
 		r_x=Math.floor(Math.random()*1000);
 		r_y=Math.floor(Math.random()*1000);
-		if ($(this).parent('div').find('.rotate').attr('checked')){
+		if ($('#rotate'+index).attr('checked')){
 		rotate = "data-rotate='"+Math.floor(Math.random()*360)+"'";
 		}else { rotate=""; }
-		if ($(this).parent('div').find('.scale').attr('checked')){
+		if ($('#scale'+index).attr('checked')){
 		scale = "data-scale='"+Math.floor(Math.random()*10)+"'";
 		}else { scale=""; }
-		if ($(this).parent('div').find('.3d').attr('checked')){
+		if ($('#3d'+index).attr('checked')){
 		r_z = "data-z='"+Math.floor(Math.random()*1000)+"'";
 		}else { r_z=""; }
 		}
@@ -70,8 +70,9 @@ $('#save_and_download').click(function(){
 
 });
 
-function g_option(){
-var opt='&nbsp; <label class="checkbox inline"><input type="checkbox" class="rotate"> Rotate</label><label class="checkbox inline"><input type="checkbox" class="scale"> Scale</label><label class="checkbox inline"><input type="checkbox" class="3d"> 3D </label><hr />';
+function g_option(i){
+i=i-1;
+var opt='&nbsp; <label class="checkbox inline"><input type="checkbox" id="rotate'+i+'"> Rotate</label><label class="checkbox inline"><input type="checkbox" id="scale'+i+'"> Scale</label><label class="checkbox inline"><input type="checkbox" id="3d'+i+'"> 3D </label><hr />';
 return opt;
 }
 

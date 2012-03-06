@@ -16,6 +16,25 @@ head = '<!DOCTYPE html><html><head><title>impress created by createimpress.herok
         h1,h2,h3,h4,h5,h6{
         font-size:100%;
         }
+        h1{
+        font-size: 2em;
+        }
+        .step:not(.active) {
+        opacity: 0.2;
+        }
+        .step{
+        display: block;
+        color: #666;
+        text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+        font-size: 30px;
+        line-height:2em;
+        letter-spacing: -1px;
+        -webkit-transition: opacity 1s;
+        -moz-transition: opacity 1s;
+        -ms-transition: opacity 1s;
+        -o-transition: opacity 1s;
+        transition: opacity 1s;
+        }
         </style>
         </head>
         <body>
