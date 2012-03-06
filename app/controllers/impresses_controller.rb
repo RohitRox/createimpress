@@ -30,8 +30,10 @@ layout :resolve_layout
   # POST /impresses.json
   def create
     if params[:title] == ""
+      title = "untitled_+#{Time.now}"
       file_name = "pack_impress_#{Time.now}.zip"
     else
+      title = params[:title]
       file_name = params[:title].to_s+".zip"
     end
       require 'zip/zip'
@@ -40,7 +42,7 @@ layout :resolve_layout
        foot = Boilerplate.first.foot
       if params[:save_or_not] == '1'
 
-          @i_pack = Impress.new(:title=>params[:title], :slide_pack=>params[:pack]);
+          @i_pack = Impress.new(:title=>title, :slide_pack=>params[:pack]);
           @i_pack.save
 
           t = Tempfile.new("my-temp-filename-#{Time.now}")
